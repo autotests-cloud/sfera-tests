@@ -58,3 +58,14 @@ tasks.withType(Test) {
         }
     }
 }
+task android(type: Test) { // запуск тестов на андроид
+    useJUnitPlatform {
+        includeTags 'android'
+    }
+}
+
+task ios(type: Test) { // запуск тестов на ios
+    useJUnitPlatform {
+        includeTags 'ios'
+    }
+}
