@@ -12,7 +12,7 @@ public interface BrowserstackDriverConfig extends Config {
 
     String deviceName();
 
-    @Key("os_version")
+    @Key("osVersion")
     String osVersion();
 
     @Key("project")
