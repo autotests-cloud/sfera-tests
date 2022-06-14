@@ -34,9 +34,10 @@ public class MobileDriver implements WebDriverProvider {
         options.setLanguage(Credentials.mobileDriver.language());
         options.setAppPackage(Credentials.mobileDriver.appPackage());
         options.setAppActivity(Credentials.mobileDriver.appActivity());
-        options.setCapability("autoAcceptAlerts", "true"); //to accept all alerts
-//        options.setCapability("autoDissmissAlerts", "true"); //to dismiss all alerts
-        
+        options.setCapability("autoGrantPermissions", "true"); //Grant all permissions for Android
+        //options.setCapability("autoAcceptAlerts", "true"); //to accept all alerts for iOS apps
+        //options.setCapability("autoDissmissAlerts", "true"); //to dismiss all alerts for iOS apps
+
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
