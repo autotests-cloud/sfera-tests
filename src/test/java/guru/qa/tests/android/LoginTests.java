@@ -17,6 +17,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 @Tag("android")
 public class LoginTests extends TestBase {
     @Test
+
 //    @Feature("Wiki App Mobile")
     @Owner("Stanislav Vasenkov")
 //    @Severity(SeverityLevel.NORMAL)
@@ -41,7 +42,6 @@ public class LoginTests extends TestBase {
         $(AppiumBy.id("zone.sfera:id/tvCategoryTitle")).shouldHave(text("Primary"));
     }
 
-    @Test
 //    @Feature("Wiki App Mobile")
     @Owner("Stanislav Vasenkov")
 //    @Severity(SeverityLevel.NORMAL)

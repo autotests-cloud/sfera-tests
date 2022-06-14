@@ -25,7 +25,7 @@ public class MobileDriver implements WebDriverProvider {
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
-        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
+        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //todo Deprecated
         options.setPlatformName(Credentials.mobileDriver.platformName());
         options.setDeviceName(Credentials.mobileDriver.deviceName());
         options.setPlatformVersion(Credentials.mobileDriver.platformVersion());
@@ -63,5 +63,4 @@ public class MobileDriver implements WebDriverProvider {
         }
         return app;
     }
-
 }

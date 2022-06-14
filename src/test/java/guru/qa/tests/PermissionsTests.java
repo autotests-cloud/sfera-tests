@@ -1,19 +1,14 @@
 package guru.qa.tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import guru.qa.config.Credentials;
 import io.appium.java_client.AppiumBy;
-import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static io.qameta.allure.Allure.step;
 
 public class PermissionsTests extends TestBase {
-    @Test
+
     void loginTest() {
         $(AppiumBy.id("zone.sfera:id/vEnter")).click();
         $(AppiumBy.id("zone.sfera:id/etId")).sendKeys(Credentials.sferaId.login());
