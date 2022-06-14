@@ -2,7 +2,7 @@ package guru.qa.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/mobile.properties")
+@Config.Sources("classpath:mobile.properties")
 public interface MobileDriverConfig extends Config {
     String platformName();
     String platformVersion();

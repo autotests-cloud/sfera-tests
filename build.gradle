@@ -69,3 +69,9 @@ task ios(type: Test) { // запуск тестов на ios
         includeTags 'ios'
     }
 }
+
+task permissions(type: Test) { // запуск тестов на ios
+    useJUnitPlatform {
+        includeTags 'permissions'
+    }
+}
