@@ -1,5 +1,6 @@
 package guru.qa.tests.android;
 
+import guru.qa.config.Credentials;
 import guru.qa.pages.LoginPage;
 import guru.qa.tests.TestBase;
 import io.appium.java_client.AppiumBy;
@@ -20,9 +21,9 @@ public class LoginTests extends TestBase {
     void successfulLoginWithSferaIdTest() {
         new LoginPage()
                 .clickEnter()
-                .sendLogin()
-                .sendPassword()
-                .clickvEnter();
+                .setLogin(Credentials.sferaId.login())
+                .setPassword(Credentials.sferaId.password())
+                .clickEnter();
         $(AppiumBy.id("zone.sfera:id/tvCategoryTitle")).shouldHave(text("Primary"));
     }
 
@@ -33,9 +34,9 @@ public class LoginTests extends TestBase {
     void negativeLoginWithSferaIdWithWrongPasswordTest() {
         new LoginPage()
                 .clickEnter()
-                .sendLogin()
-                .wrongSendPassword()
-                .clickvEnter();
+                .setLogin(Credentials.sferaId.login())
+                .setPassword("123456")
+                .clickEnter();
         $(AppiumBy.id("zone.sfera:id/tvError")).
                 shouldHave(text("You entered an incorrect ID or password, please try again"));
     }

@@ -8,44 +8,26 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    private final SelenideElement vEnter = $(AppiumBy.id("zone.sfera:id/vEnter"));
-    private final SelenideElement login = $(AppiumBy.id("zone.sfera:id/etId"));
-    private final SelenideElement password = $(AppiumBy.id("zone.sfera:id/etPassword"));
-    private final SelenideElement Enter = $(AppiumBy.id("zone.sfera:id/vEnter"));
+    private final SelenideElement vEnter = $(AppiumBy.id("zone.sfera:id/vEnter")),
+            login = $(AppiumBy.id("zone.sfera:id/etId")),
+            password = $(AppiumBy.id("zone.sfera:id/etPassword"));
 
 
     @Step("Нажать на кнопку Enter")
     public LoginPage clickEnter() {
-        vEnter
-                .click();
+        vEnter.click();
         return this;
     }
 
-    @Step("Нажать на кнопку login")
-    public LoginPage sendLogin() {
-        login
-                .sendKeys(Credentials.sferaId.login());
+    @Step("Ввести значение '{value}' в поле login")
+    public LoginPage setLogin(String value) {
+        login.sendKeys(value);
         return this;
     }
 
-    @Step("Нажать на кнопку password")
-    public LoginPage sendPassword() {
-        password
-                .sendKeys(Credentials.sferaId.password());
-        return this;
-    }
-
-    @Step("Нажать на кнопку password")
-    public LoginPage wrongSendPassword() {
-        password
-                .sendKeys("123456");
-        return this;
-    }
-
-    @Step("Нажать на кнопку Enter")
-    public LoginPage clickvEnter() {
-        Enter
-                .click();
+    @Step("Ввести значение '{value}' в поле password")
+    public LoginPage setPassword(String value) {
+        password.sendKeys(value);
         return this;
     }
 }

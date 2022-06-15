@@ -1,8 +1,6 @@
 package guru.qa.tests.android;
 
 import guru.qa.config.Credentials;
-import guru.qa.pages.LoginPage;
-import guru.qa.pages.PermissionsPage;
 import guru.qa.tests.TestBase;
 import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Owner;
@@ -23,13 +21,12 @@ public class WithOutLoginPermissionsTests extends TestBase {
 //    @Severity(SeverityLevel.NORMAL)
     @DisplayName("WithOutLoginPermissionsTests")
     void WithOutLoginPermissionsTests() {
-        new LoginPage()
-                .clickEnter()
-                .sendLogin()
-                .sendPassword()
-                .clickvEnter();
-        new PermissionsPage()
-                .grant_dialog()
+        loginPage.clickEnter()
+                .setLogin(Credentials.sferaId.login())
+                .setPassword(Credentials.sferaId.password())
+                .clickEnter();
+        permissionsPage
+                .grantDialog()
                 .permission_message()
                 .permission_allow_foreground_only_button()
                 .permission_message_audio()
