@@ -20,7 +20,7 @@ public class WithOutLoginPermissionsTests extends TestBase {
     @Owner("Amidosha")
 //    @Severity(SeverityLevel.NORMAL)
     @DisplayName("WithOutLoginPermissionsTests")
-    void WithOutLoginPermissionsTests() {
+    void withOutLoginPermissionsTest() {
         loginPage.clickEnter()
                 .setLogin(Credentials.sferaId.login())
                 .setPassword(Credentials.sferaId.password())
