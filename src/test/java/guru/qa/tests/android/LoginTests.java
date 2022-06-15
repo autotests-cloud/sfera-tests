@@ -24,7 +24,8 @@ public class LoginTests extends TestBase {
                 .setLogin(Credentials.sferaId.login())
                 .setPassword(Credentials.sferaId.password())
                 .clickEnter();
-        $(AppiumBy.id("zone.sfera:id/tvCategoryTitle")).shouldHave(text("Primary"));
+        assertCheckPage
+                .shouldHaveText();
     }
 
     @Test

@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import guru.qa.helpers.Attach;
 import guru.qa.helpers.DriverSettings;
+import guru.qa.pages.AssertCheckPage;
 import guru.qa.pages.LoginPage;
 import guru.qa.pages.PermissionsPage;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,6 +21,7 @@ public class TestBase {
     private static String deviceProvider = System.getProperty("deviceProvider", "mobile");
     public LoginPage loginPage = new LoginPage();
     public PermissionsPage permissionsPage = new PermissionsPage();
+    public AssertCheckPage assertCheckPage = new AssertCheckPage();
 
     @BeforeAll
     public static void setup() {
