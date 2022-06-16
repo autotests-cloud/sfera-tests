@@ -25,7 +25,7 @@ public class BrowserstackDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("os_version", Credentials.browserstack.osVersion());
         mutableCapabilities.setCapability("project", Credentials.browserstack.project());
         mutableCapabilities.setCapability("build", Credentials.browserstack.build());
-        mutableCapabilities.setCapability("name", Credentials.browserstack.app());
+        mutableCapabilities.setCapability("name", Credentials.browserstack.name());
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
