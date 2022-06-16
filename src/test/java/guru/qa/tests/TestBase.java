@@ -4,6 +4,9 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import guru.qa.helpers.Attach;
 import guru.qa.helpers.DriverSettings;
+import guru.qa.pages.android.MainPage;
+import guru.qa.pages.android.LoginPage;
+import guru.qa.pages.android.components.PermissionsComponent;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,7 +19,9 @@ import static io.qameta.allure.Allure.step;
 public class TestBase {
 
     private static String deviceProvider = System.getProperty("deviceProvider", "mobile");
-
+    public LoginPage loginPage = new LoginPage();
+    public MainPage mainPage = new MainPage();
+    public PermissionsComponent permissionsComponent = new PermissionsComponent();
 
     @BeforeAll
     public static void setup() {
