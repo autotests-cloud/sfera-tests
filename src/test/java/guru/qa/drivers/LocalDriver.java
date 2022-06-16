@@ -17,7 +17,7 @@ import java.net.URL;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 
-public class MobileDriver implements WebDriverProvider {
+public class LocalDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
