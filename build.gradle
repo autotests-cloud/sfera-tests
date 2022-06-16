@@ -58,6 +58,7 @@ tasks.withType(Test) {
         }
     }
 }
+
 task android(type: Test) { // запуск тестов на андроид
     useJUnitPlatform {
         includeTags 'android'
