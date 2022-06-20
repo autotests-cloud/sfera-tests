@@ -7,6 +7,10 @@ import guru.qa.helpers.DriverSettings;
 import guru.qa.pages.android.MainPage;
 import guru.qa.pages.android.LoginPage;
 import guru.qa.pages.android.components.PermissionsComponent;
+import guru.qa.pages.ios.IosAuthPage;
+import guru.qa.pages.ios.IosLoginViaSferaIDPage;
+import guru.qa.pages.ios.IosMainPage;
+import guru.qa.pages.ios.components.IosPermissionsComponents;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,10 +22,15 @@ import static io.qameta.allure.Allure.step;
 
 public class TestBase {
 
-    private static String deviceProvider = System.getProperty("deviceProvider", "mobile");
+    private static String deviceProvider = System.getProperty("deviceProvider", "browserstack");
     public LoginPage loginPage = new LoginPage();
     public MainPage mainPage = new MainPage();
     public PermissionsComponent permissionsComponent = new PermissionsComponent();
+    public IosPermissionsComponents iosPermissionsComponents = new IosPermissionsComponents();
+    public IosLoginViaSferaIDPage iosLoginViaSferaIDPage = new IosLoginViaSferaIDPage();
+    public IosMainPage iosMainPage = new IosMainPage();
+
+    public IosAuthPage iosAuthPage = new IosAuthPage();
 
     @BeforeAll
     public static void setup() {
